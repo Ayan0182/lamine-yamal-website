@@ -1,0 +1,308 @@
+/* StatsPage.css */
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #0a0c12;
+  color: #ecedee;
+}
+
+/* Main Container */
+.stats-page {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background-color: #0a0c12;
+  min-height: 100vh;
+}
+
+/* Header Section */
+.stats-header {
+  text-align: left;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #1e2028;
+  padding-bottom: 1.5rem;
+}
+
+.stats-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.stats-header p {
+  font-size: 1rem;
+  color: #EDBB00;
+  margin-bottom: 1.25rem;
+}
+
+#fcb {
+  color: #A50044;
+  font-weight: 600;
+}
+#esp {
+  color: #004D98;
+  font-weight: 600;
+}
+
+/* Back Home Button */
+.stats-header button {
+  background-color: #1e2028;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ecedee;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.stats-header button:hover {
+  background-color: #2d2f3a;
+  transform: translateY(-1px);
+}
+
+/* Tabs Navigation - Centered with underline */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #1e2028;
+  position: relative;
+}
+
+.tabs button {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #8b8f9e;
+  cursor: pointer;
+  font-family: inherit;
+  position: relative;
+  transition: none;
+}
+
+/* Active tab - white text + bottom underline line */
+.tabs .active-tab {
+  color: #ffffff;
+}
+
+.tabs .active-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+/* No hover effects */
+.tabs button:hover {
+  color: #8b8f9e;
+  background: transparent;
+}
+
+/* Table Sections */
+.table-section {
+  margin-bottom: 2.5rem;
+  background-color: #0f1118;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #1e2028;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.table-section h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  background-color: #13151e;
+  border-bottom: 1px solid #22242e;
+  color: #f0f1f3;
+  letter-spacing: -0.2px;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  background-color: #0a0c12;
+  color: #a1a5b3;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #1e2028;
+}
+
+td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #1a1c24;
+  color: #e2e4e9;
+  font-weight: 400;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Zebra striping for better readability */
+tbody tr:nth-child(even) {
+  background-color: #0c0e15;
+}
+
+tbody tr:hover {
+  background-color: #181b24;
+  transition: background 0.15s;
+}
+
+/* Specific column alignments (optional, keeps numbers readable) */
+td:not(:first-child),
+th:not(:first-child) {
+  text-align: center;
+}
+
+td:first-child,
+th:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Card / badge style for yellow/red cards */
+td:nth-child(5),
+td:nth-child(6) {
+  font-weight: 500;
+}
+
+/* Smooth scroll for entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stats-page {
+    padding: 1rem;
+  }
+
+  .stats-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .tabs {
+    gap: 1rem;
+  }
+
+  .tabs button {
+    padding: 0.5rem 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  th,
+  td {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .table-section h2 {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  /* For very small screens, allow horizontal scroll */
+  .table-section {
+    overflow-x: auto;
+  }
+  
+  table {
+    min-width: 500px;
+  }
+}
+
+/* Dark mode fine-tuning (already dark) */
+::selection {
+  background-color: #3b3f5c;
+  color: #ffffff;
+}
+
+
+.stats-chart{
+
+margin-top:60px;
+
+margin-bottom:60px;
+
+}
+
+.stats-chart h2{
+
+font-size:25px;
+
+margin-bottom:20px;
+
+color:#ffffff;
+
+background-color: #13151e;
+
+padding: 15px 20px;
+
+border-radius: 12px;
+
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+}
+
+.chart-box{
+
+background:#13151e;
+
+padding:30px;
+
+border-radius:18px;
+
+height:450px;
+
+box-shadow:
+
+0 0 20px
+rgba(0,0,0,.08);
+
+}
+
+@media(max-width:768px){
+
+.chart-box{
+
+height:350px;
+
+padding:15px;
+
+}
+
+}
